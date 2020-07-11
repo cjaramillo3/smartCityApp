@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{% static "css/estilo.css" %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js" ></script>
+    <title>Aragón SmartCity </title>
+  </head>
+
+  <body class="d-flex flex-column min-vh-100">
+    <div class="container">
+      <!-- encabezado -->
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="/">
+          <img src="{% static "images/logo.jpg" %}" width="101" height="30" class="d-inline-block align-top" alt="">
+           SmartCity
+        </a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Áreas
+              </a>
+              <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item text-white bg-dark" href="{% url 'smart_cityapp:economia' %}">Economía</a>
+                <a class="dropdown-item text-white bg-dark" href="{% url 'smart_cityapp:ambiente' %}">Medio Ambiente</a>
+                <a class="dropdown-item text-white bg-dark" href="{% url 'smart_cityapp:salud' %}">Salud</a>
+                <a class="dropdown-item text-white bg-dark" href="{% url 'smart_cityapp:seguridad' %}">Seguridad</a>
+                <a class="dropdown-item text-white bg-dark" href="{% url 'smart_cityapp:trafico' %}">Transporte</a>
+                <a class="dropdown-item text-white bg-dark" href="{% url 'smart_cityapp:turismo' %}">Turismo</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      {% block body %}
+      {% endblock%}
+
+      <br><hr class="featurette-divider">
+    </div>
+
+      <!-- pie de página -->
+    <hr class="featurette-divider">
+    <footer class="mt-auto">
+      <p class="float-right"><a class="volver" href="#">Volver arriba</a></p>
+      <p>Proyecto de Fin de Titulación &middot; Sistemas Informáticos y Computación &middot; UTPL</p>
+      <p class="float-right">Carolina Jaramillo Valdivieso &middot; caro.jaramillo72@gmail.com</p>
+      <p>Prototipo realizado con datos provenientes de la comunidad de Aragón, España</p>
+
+    </footer>
+
+    <script src="{% static "javascript/javascript.js" %}"></script>
+  </body>
+</html>

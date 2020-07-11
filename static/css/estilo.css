@@ -1,0 +1,24 @@
+@charset "UTF-8";
+h2{
+  color: #cf7500;
+}
+h4{
+  color: #f0a500;
+  /* color:red; */
+}
+
+#textoc{
+  color: white; text-shadow: black 0.2em 0.2em 0.3em;
+}
+#colimagenes{
+  padding-top: 60px;
+}
+.volver{
+  color: #cf7500;
+}
+.mt-auto{
+  padding: 0 15px;
+  margin-bottom: 0;
+  margin: auto;
+  width: 73%;
+}

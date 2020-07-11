@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+{% extends "smart_cityapp/base.html"%}
+{% load static %}
+{% block body %}
+
+<br><h2>Economía</h2>
+<hr class="featurette-divider">
+<h4>Venta de Productos Industriales</h4><br>
+
+<table id="myTable" data-toggle="table" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th class="th-sm">Objeto de Interés</th>
+      <th class="th-sm">Propiedad</th>
+      <th class="th-sm">Resultado</th>
+      <th class="th-sm">Unidad de Medida</th>
+      <th class="th-sm">Fecha de Inicio</th>
+      <th class="th-sm">Fecha Fin</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for observacion in productos %}
+    <tr>
+      <td>{{observacion.objeto}}</td>
+      <td>{{observacion.propiedad}}</tdos>
+      <td>{{observacion.resultado}}</td>
+      <td> <a href="{{observacion.unidaduri}}" target="_blank">{{observacion.unidad}}</a></td>
+      <td>{{observacion.inicio}}</td>
+      <td>{{observacion.fin}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+<br><hr class="featurette-divider">
+
+<h4>Número de Actividades Económicas</h4><br>
+<table id="myTable" data-toggle="table" class="display table table-striped table-bordered table-sm" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th class="th-sm">Observación</th>
+      <th class="th-sm">Objeto de Interés</th>
+      <th class="th-sm">Propiedad</th>
+      <th class="th-sm">Resultado</th>
+      <th class="th-sm">Fecha de Inicio</th>
+      <th class="th-sm">Fecha Fin</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for observacion in actividades %}
+    <tr>
+      <td>{{observacion.obs}}</td>
+      <td>{{observacion.objeto}}</td>
+      <td>{{observacion.propiedad}}</td>
+      <td>{{observacion.resultado}}</td>
+      <td>{{observacion.inicio}}</td>
+      <td>{{observacion.fin}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
